@@ -79,10 +79,12 @@ $('#new_message').on('submit', function(e){
     $('.main-chat__message-list').append(html);      
     $('form')[0].reset();
     $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
-    $('.main-chat__message-form__contents__submit-btn').prop('disabled', false);
   })
   .fail(function(){
     alert('メッセージ送信に失敗しました');
+  })
+  .always(function(){
+    $('.main-chat__message-form__contents__submit-btn').prop('disabled', false);
   })
 })
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
